@@ -129,34 +129,14 @@ if (markerFound == 1) {
 <script src="https://libs.zappar.com/zappar-videorecorder/1.0.1/zappar-videorecorder.js"></script>
         $ npm install --save @zappar/video-recorder
 import * as ZapparVideoRecorder from "@zappar/video-recorder";
-ZapparVideoRecorder.createCanvasVideoRecorder(canvas, {
-  // Options
-}).then(recorder => {
-
-  // Use recorder to control recording
-
+ZapparVideoRecorder.createCanvasVideoRecorder(canvas, {autoFrameUpdate}).then(recorder => {
+        recorder.start();
+        recorder.stop();
 });
-recorder.start();
-// ...
-recorder.stop();
+
 recorder.onStart.bind(() => {
-  // Video recording has started
-  // You may like to use this to show a 'stop recording' button
-  // or to plan an on-screen animation during recording
 });
-recorder.onComplete.bind(result => {
-  // Use result to access the final video file
-});
-// Use the raw ArrayBuffer:
-result.arrayBuffer
-
-// Or a blob containing the same data:
-result.blob
-
-// Or get a data URL:
-result.asDataURL().then(dataurl => {
-  // Use dataurl
-});
+recorder.onComplete.bind(result => {result.arrayBuffer});
         
 <!-- BEGIN: Bottom HTML -->
 </a-marker>
