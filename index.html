@@ -125,18 +125,7 @@ if (markerFound == 1) {
 ></a-video>
 <!-- END: Unity Compiled Objects -->
 
-<script src="zappar-videorecorder.js"></script>
-<script src="https://libs.zappar.com/zappar-videorecorder/1.0.1/zappar-videorecorder.js"></script>
-
-import * as ZapparVideoRecorder from "@zappar/video-recorder";
-ZapparVideoRecorder.createCanvasVideoRecorder(canvas, {autoFrameUpdate}).then(recorder => {
-        recorder.start();
-        recorder.stop();
-});
-
-recorder.onStart.bind(() => {
-});
-recorder.onComplete.bind(result => {result.arrayBuffer});
+<button type="button" id="button">Record</button>
         
 <!-- BEGIN: Bottom HTML -->
 </a-marker>
